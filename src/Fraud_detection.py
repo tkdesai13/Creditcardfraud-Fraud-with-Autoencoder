@@ -34,7 +34,6 @@ full_path = os.path.join(model_path, model_name)
 tensorboard_logs = model_path + '/logs'
 
 # Training of the model
-
 checkpoint = ModelCheckpoint(full_path, verbose=0, monitor='val_loss', save_best_only=True, load_weights_on_restart=True)
 earlystopping = EarlyStopping(monitor='val_loss', patience=300, restore_best_weights=True)
 tensorboard = TensorBoard(write_graph=True, write_images=True)
